@@ -1,5 +1,4 @@
 FROM  golang:1.10-alpine3.8  AS builder
-RUN apk add git
 RUN go get github.com/muesli/cache2go 
 RUN go get github.com/prometheus/client_golang/prometheus
 RUN go get github.com/prometheus/client_golang/prometheus/promhttp

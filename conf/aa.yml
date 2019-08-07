@@ -1,0 +1,21 @@
+http:
+- name: test_exporter
+  url:  http://10.0.197.182:7202/actuator/health
+  check_str: "UP"
+- name: test_exporter32
+  interval: 5
+  url:  http://10.0.197.182:7112/actuator/health
+  method: GET
+  header:
+    - key: Content-Type
+      value: application/json
+  body: "
+  {\"name\":\"zhangyuming\"}
+  "
+  check_str: "UP"
+tcp:
+- name: tcp_exporter
+  host: 10.0.197.170
+  port: 6379
+  interval: 6
+
